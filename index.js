@@ -73,9 +73,12 @@ function buildCompilerArgs(options){
 			if (typeof r === 'string'){
 				return '/res:' + r;
 			}
-			return '/res:' + r.file + ',' + r.id;
+			var s = '/res:' + r.file + ',' + r.id;
+			return !!r.private ? s + ',private' : s;
 		});
 	argv = argv.concat(resources);
+
+	// TODO support linked resources
 
 	// TODO support file patterns
 	// append source files
