@@ -1,7 +1,6 @@
 var csc = require('../../index');
 
 csc({
-	target: 'lib',
 	src: '*.cs',
 	out: 'test.dll',
 	nologo: true

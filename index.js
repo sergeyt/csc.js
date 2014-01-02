@@ -16,6 +16,10 @@ function resolveFiles(pattern){
 	return glob.sync(pattern);
 }
 
+function endsWith(s, suffix){
+	return s.indexOf(suffix, s.length - suffix.length) !== -1;
+}
+
 function buildCompilerArgs(options){
 
 	// copy options to avoid side effects
@@ -24,6 +28,16 @@ function buildCompilerArgs(options){
 	// shortcuts
 	if (options.target == 'lib'){
 		options.target = 'library';
+	}
+
+	// auto target based on output file
+	if (!options.target && options.out){
+		var out = options.out.toLowerCase();
+		if (endsWith(out, '.dll')){
+			options.target = 'library';
+		} else if (endsWith(out, '.exe')){
+			options.target = 'exe';
+		}
 	}
 
 	// schema of basic options
