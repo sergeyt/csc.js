@@ -1,6 +1,7 @@
 var exec = require('child_process').exec,
+	fs = require('fs'),
 	path = require('path'),
-	os =require('os'),
+	os = require('os'),
 	_ = require('lodash'),
 	glob = require('glob'),
 	fx = require('./src/framework');
@@ -135,10 +136,20 @@ function buildCompilerArgs(options){
 }
 
 module.exports = function(options, callback){
+
 	var dir = fx.dir(options.framework);
 	var args = buildCompilerArgs(options);
+
+	// ensure outdir
+	var out = path.resolve(options.out);
+	var outdir = path.dirname(out);
+	if (!fs.existsSync(outdir)) {
+		fs.mkdirSync(outdir);
+	}
+
 	// TODO: mono support
 	var cmd = path.join(dir, 'csc.exe') + ' ' + args.join(' ');
+
 	exec(cmd, {}, function(error, stdout, stderr){
 		// TODO parse errors
 		callback(error, {stdout:stdout, stderr:stderr});

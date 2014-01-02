@@ -2,7 +2,7 @@ var csc = require('../index');
 
 csc({
 	src: 'hello/*.cs',
-	out: 'hello/hello.exe',
+	out: 'bin/hello.exe',
 	nologo: true
 }, function(err, res){
 	if (res){
