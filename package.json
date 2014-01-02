@@ -1,6 +1,6 @@
 {
   "name": "csc.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Nodejs module to run c# compiler.",
   "license": "MIT",
   "main": "index.js",
