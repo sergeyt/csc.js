@@ -5,10 +5,11 @@ csc({
 	out: 'hello.exe',
 	nologo: true
 }, function(err, res){
-	if (err) {
-		console.error(err);
-		return;
+	if (res){
+		res.stdout && console.log(res.stdout);
+		res.stderr && console.log(res.stderr);
 	}
-	res.stdout && console.log(res.stdout);
-	res.stderr && console.log(res.stderr);
+	if (err){
+		console.error(err);
+	}
 });

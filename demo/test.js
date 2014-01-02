@@ -1,8 +1,8 @@
-var csc = require('../../index');
+var csc = require('../index');
 
 csc({
-	src: '*.cs',
-	out: 'test.dll',
+	src: 'hello/*.cs',
+	out: 'hello/hello.exe',
 	nologo: true
 }, function(err, res){
 	if (res){

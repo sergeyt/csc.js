@@ -1,19 +1,29 @@
 var exec = require('child_process').exec,
 	path = require('path'),
+	os =require('os'),
 	_ = require('lodash'),
 	glob = require('glob'),
 	fx = require('./src/framework');
+
+function fixSlashes(files){
+	if (os.platform() == 'win32'){
+		return files.map(function(f){
+			return f.replace(/\//g, '\\');
+		});
+	}
+	return files;
+}
 
 function resolveFiles(pattern){
 	if (!pattern){
 		return [];
 	}
 	if (_.isArray(pattern)){
-		return _.flatten(pattern.map(function(p){
+		return fixSlashes(_.flatten(pattern.map(function(p){
 			return glob.sync(p);
-		}));
+		})));
 	}
-	return glob.sync(pattern);
+	return fixSlashes(glob.sync(pattern));
 }
 
 function endsWith(s, suffix){
@@ -100,6 +110,7 @@ function buildCompilerArgs(options){
 		});
 	argv = argv.concat(refs);
 
+	// TODO glob patterns for resources?
 	// resources
 	var resources = (options.resources || [])
 		.filter(function(r){
