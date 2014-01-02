@@ -1,9 +1,9 @@
 var csc = require('../../index');
 
 csc({
-	target: 'exe',
+	target: 'lib',
 	src: '*.cs',
-	out: 'hello.exe',
+	out: 'test.dll',
 	nologo: true
 }, function(err, res){
 	if (err) {

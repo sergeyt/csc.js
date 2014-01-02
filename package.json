@@ -16,6 +16,8 @@
     "Sergey Todyshev <stodyshev@gmail.com>"
   ],
   "dependencies": {
+    "lodash": "~2.4.1",
+    "glob": "~3.2.7"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

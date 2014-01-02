@@ -1,10 +1,32 @@
 var exec = require('child_process').exec,
 	path = require('path'),
+	_ = require('lodash'),
+	glob = require('glob'),
 	fx = require('./src/framework');
+
+function resolveFiles(pattern){
+	if (!pattern){
+		return [];
+	}
+	if (_.isArray(pattern)){
+		return _.flatten(pattern.map(function(p){
+			return glob.sync(p);
+		}));
+	}
+	return glob.sync(pattern);
+}
 
 function buildCompilerArgs(options){
 
-	// simple options
+	// copy options to avoid side effects
+	options = _.extend({}, options);
+
+	// shortcuts
+	if (options.target == 'lib'){
+		options.target = 'library';
+	}
+
+	// schema of basic options
 	var schema = [
 		{key: 'platform', opt:'platform', type: 'string'},
 		{key: 'target', opt:'t', type: 'string'},
@@ -49,6 +71,7 @@ function buildCompilerArgs(options){
 		args.push('/debug:' + options.debug);
 	}
 
+	// TODO glob patterns for references?
 	// refs
 	var refs = (options.refs || [])
 		.filter(function(r){
@@ -80,9 +103,8 @@ function buildCompilerArgs(options){
 
 	// TODO support linked resources
 
-	// TODO support file patterns
 	// append source files
-	argv = argv.concat(options.src || []);
+	argv = argv.concat(resolveFiles(options.src));
 
 	return argv;
 }
