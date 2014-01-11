@@ -1,13 +1,13 @@
 var exec = require('child_process').exec,
 	fs = require('fs'),
 	path = require('path'),
-	os = require('os'),
 	_ = require('lodash'),
 	glob = require('glob'),
-	fx = require('./src/framework');
+	fx = require('./lib/framework'),
+	iswin = require('iswin');
 
 function fixSlashes(files){
-	if (os.platform() == 'win32'){
+	if (iswin()){
 		return files.map(function(f){
 			return f.replace(/\//g, '\\');
 		});
