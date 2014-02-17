@@ -16,12 +16,13 @@
     "Sergey Todyshev <stodyshev@gmail.com>"
   ],
   "dependencies": {
-    "lodash": "~2.4.1",
     "glob": "~3.2.7",
     "iswin": "0.0.2",
     "q": "~1.0.0",
     "async": "~0.2.10",
-    "js-yaml": "~3.0.1"
+    "js-yaml": "~3.0.1",
+    "underscore": "~1.6.0",
+    "underscore.string": "~2.3.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

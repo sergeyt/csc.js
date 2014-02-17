@@ -1,3 +1,4 @@
 outdir: bin
 outprefix: test.
 outsuffix: .v7
+srcroot: ..
