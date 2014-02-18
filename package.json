@@ -22,7 +22,8 @@
     "js-yaml": "~3.0.1",
     "underscore": "~1.6.0",
     "underscore.string": "~2.3.3",
-    "globs": "~0.1.1"
+    "glob": "~3.2.8",
+    "debug": "~0.7.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
