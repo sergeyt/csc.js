@@ -1,4 +1,5 @@
-outdir: bin
-outprefix: test.
-outsuffix: .v7
+out:
+  dir: bin
+  prefix: test.
+  suffix: .v7
 srcroot: ..
