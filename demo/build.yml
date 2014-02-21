@@ -1,0 +1,4 @@
+out:
+  dir: bin
+  prefix: test.
+  suffix: .v7
