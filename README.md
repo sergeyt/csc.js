@@ -5,6 +5,7 @@
 
 [![NPM version](https://badge.fury.io/js/csc.js.png)](http://badge.fury.io/js/csc.js)
 [![Deps Status](https://david-dm.org/sergeyt/csc.js.png)](https://david-dm.org/sergeyt/csc.js)
+[![DevDeps Status](https://david-dm.org/sergeyt/csc.js/dev-status.png)](https://david-dm.org/sergeyt/csc.js#info=devDependencies)
 
 [![NPM](https://nodei.co/npm/csc.js.png?downloads=true&stars=true)](https://nodei.co/npm/csc.js/)
 
