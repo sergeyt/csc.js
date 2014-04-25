@@ -17,23 +17,23 @@
   ],
   "dependencies": {
     "iswin": "0.0.2",
-    "q": "~1.0.0",
-    "async": "~0.2.10",
-    "js-yaml": "~3.0.1",
-    "underscore": "~1.6.0",
-    "underscore.string": "~2.3.3",
-    "glob": "~3.2.8",
-    "debug": "~0.7.4",
+    "q": "~1.0",
+    "async": "~0.2",
+    "js-yaml": "~3.0",
+    "underscore": "~1.6",
+    "underscore.string": "~2.3",
+    "glob": "~3.2",
+    "debug": "~0.8",
     "fileset.js": "0.0.3"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.8.0",
+    "grunt": "~0.4",
+    "grunt-contrib-jshint": "~0.10",
     "grunt-npm": "~0.0.2",
-    "grunt-bump": "~0.0.7",
-    "grunt-auto-release": "~0.0.2",
-    "grunt-coffeelint": "0.0.8",
-    "grunt-cli": "~0.1.11"
+    "grunt-bump": "~0.0.13",
+    "grunt-auto-release": "~0.0.6",
+    "grunt-coffeelint": "0.0.10",
+    "grunt-cli": "~0.1"
   },
   "scripts": {
     "lint": "grunt lint",
