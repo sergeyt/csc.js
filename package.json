@@ -23,8 +23,8 @@
     "underscore": "~1.6",
     "underscore.string": "~2.3",
     "glob": "~4.0",
-    "debug": "~0.8",
-    "fileset.js": "0.0.3"
+    "debug": "~1.0",
+    "fileset.js": "0.0.4"
   },
   "devDependencies": {
     "grunt": "~0.4",
