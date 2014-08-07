@@ -19,7 +19,7 @@
     "iswin": "0.0.2",
     "q": "~1.0",
     "async": "~0.2",
-    "js-yaml": "~3.0",
+    "js-yaml": "~3.1",
     "underscore": "~1.6",
     "underscore.string": "~2.3",
     "glob": "~4.0",
